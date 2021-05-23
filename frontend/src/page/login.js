@@ -19,8 +19,15 @@ const useStyles = createUseStyles({
         width: '40vw',
         '& > div': {
             '& > input': {
-                display: 'block',
                 width: '100%',
+                padding: '10px',
+                margin: '10px 0 0 0',
+                display: 'inline-block',
+                border: 'none',
+                background: '#f1f1f1',
+                '& :focus':{
+                    backgroundColor: '#ddd',
+                },
             },
             '& > label': {
                 fontSize: '1.5em',
@@ -30,15 +37,22 @@ const useStyles = createUseStyles({
             margin: '16px 0',
         },
     },
-    submit: {
-        backgroundColor: '#804e03',
-        border: 'none',
-        fontSize: '1.6em',
-        borderRadius: '2px',
-        color: 'white',
-        '&:hover': {
-            backgroundColor: '#d17e02',
+    loginBtn: {
+        display: "flex",
+        justifyContent: "center",
+        '& > button':{
+            backgroundColor: '#804e03',
+            border: 'none',
+            fontSize: '1.6em',
+            borderRadius: '5px',
+            color: 'white',
+            width: '60%',
+            padding: '5px 0',
+            '&:hover': {
+                backgroundColor: '#d17e02',
+            },
         },
+
     },
     forgetPassword: {
         display: 'flex',
@@ -78,15 +92,17 @@ function Login() {
             <form className={classes.form} onSubmit={onSubmit}>
                 <div>
                     <label>Username</label>
-                    <input type="text" value={username} onChange={onChangeUsername} />
+                    <input type="text" placeholder="Enter your email" value={username} onChange={onChangeUsername} />
                 </div>
                 
                 <div>
                     <label>Password</label>
-                    <input type="password" value={password} onChange={onChangePassword} />
+                    <input type="password" placeholder="Enter your password" value={password} onChange={onChangePassword} />
                 </div>
                 
-                <input type="submit" value="Login" className={classes.submit} />
+                <div className={classes.loginBtn}>
+                    <button type="submit" >Login</button>
+                </div>
 
                 <div className={classes.forgetPassword}>
                     <span className="forget">Forget your password?</span>
