@@ -1,7 +1,14 @@
+import Logo from "../DesArt.png";
 import { useState } from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
+    logo: {
+        '& > img': {
+            width: '128px',
+            marginBottom: '16px',
+        },
+    },
     loginContainer: {
         backgroundColor: '#5c99fa',
         display: 'flex',
@@ -18,14 +25,14 @@ const useStyles = createUseStyles({
         flexDirection: 'column',
         width: '40vw',
         '& > div': {
-            '& > input': {
+            '& > input[type=text], input[type=password]': {
                 width: '100%',
                 padding: '10px',
                 margin: '10px 0 0 0',
                 display: 'inline-block',
                 border: 'none',
                 background: '#f1f1f1',
-                '& :focus':{
+                '& :focus': {
                     backgroundColor: '#ddd',
                 },
             },
@@ -40,7 +47,7 @@ const useStyles = createUseStyles({
     loginBtn: {
         display: "flex",
         justifyContent: "center",
-        '& > button':{
+        '& > input': {
             backgroundColor: '#804e03',
             border: 'none',
             fontSize: '1.6em',
@@ -88,7 +95,9 @@ function Login() {
 
     return (
         <div className={classes.loginContainer}>
-            <div>Logo</div>
+            <div className={classes.logo}>
+                <img src={Logo} alt="DesArt Logo" />
+            </div>
             <form className={classes.form} onSubmit={onSubmit}>
                 <div>
                     <label>Username</label>
@@ -101,7 +110,7 @@ function Login() {
                 </div>
                 
                 <div className={classes.loginBtn}>
-                    <button type="submit" >Login</button>
+                    <input type="submit" value="Login" />
                 </div>
 
                 <div className={classes.forgetPassword}>
