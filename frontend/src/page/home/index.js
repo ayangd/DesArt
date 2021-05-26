@@ -1,3 +1,4 @@
+import Footer from '../../component/footer';
 import Header from '../../component/header';
 import Article from './article';
 import ContactUs from './contact-us';
@@ -12,6 +13,7 @@ function Home() {
             <Article />
             <Testimony />
             <ContactUs />
+            <Footer />
         </div>
     );
 }
