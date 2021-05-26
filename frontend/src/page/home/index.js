@@ -1,4 +1,5 @@
 import Header from '../../component/header';
+import Article from './article';
 import Slogan from './slogan';
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
         <div>
             <Header />
             <Slogan />
+            <Article />
         </div>
     );
 }
