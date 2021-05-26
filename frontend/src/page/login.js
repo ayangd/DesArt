@@ -1,6 +1,7 @@
 import Logo from "../DesArt.png";
 import { useState } from "react";
 import { createUseStyles } from "react-jss";
+import TextInput from "../component/textInput";
 
 const useStyles = createUseStyles({
     logo: {
@@ -25,17 +26,6 @@ const useStyles = createUseStyles({
         flexDirection: 'column',
         width: '40vw',
         '& > div': {
-            '& > input[type=text], input[type=password]': {
-                width: '100%',
-                padding: '10px',
-                margin: '10px 0 0 0',
-                display: 'inline-block',
-                border: 'none',
-                background: '#f1f1f1',
-                '& :focus': {
-                    backgroundColor: '#ddd',
-                },
-            },
             '& > label': {
                 fontSize: '1.5em',
             },
@@ -101,12 +91,12 @@ function Login() {
             <form className={classes.form} onSubmit={onSubmit}>
                 <div>
                     <label>Username</label>
-                    <input type="text" placeholder="Enter your email" value={username} onChange={onChangeUsername} />
+                    <TextInput type="text" placeholder="Enter your email" value={username} onChange={onChangeUsername} fullWidth />
                 </div>
                 
                 <div>
                     <label>Password</label>
-                    <input type="password" placeholder="Enter your password" value={password} onChange={onChangePassword} />
+                    <TextInput type="password" placeholder="Enter your password" value={password} onChange={onChangePassword} fullWidth />
                 </div>
                 
                 <div className={classes.loginBtn}>
