@@ -1,4 +1,6 @@
 import { createUseStyles } from "react-jss";
+import { Link } from "react-router-dom";
+import Logo from "../DesArt.png";
 
 const useStyles = createUseStyles({
     header: {
@@ -8,15 +10,23 @@ const useStyles = createUseStyles({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    headerTitle: {
-        fontSize: '2em',
-        margin: '0',
+    headerLeft: {
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    headerLogo: {
+        width: '64px',
     },
     headerMenu: {
         display: 'flex',
         '& > li': {
             listStyle: 'none',
             marginLeft: '16px',
+            borderBottom: '2px solid transparent',
+            transition: '0.5s',
+            '&:hover': {
+                borderBottom: '2px solid black',
+            },
         },
     },
 });
@@ -26,11 +36,14 @@ function Header() {
 
     return (
         <div className={classes.header}>
-            <h4 className={classes.headerTitle}>DesArt</h4>
+            <div className={classes.headerLeft}>
+                <Link to="/home"><img className={classes.headerLogo} src={Logo} alt="Logo" /></Link>
+            </div>
             <ul className={classes.headerMenu}>
-                <li>Menu 1</li>
-                <li>Menu 2</li>
-                <li>Menu 3</li>
+                <li>About Us</li>
+                <li>Portfolio</li>
+                <li>Article</li>
+                <li>Contact</li>
             </ul>
         </div>
     );
