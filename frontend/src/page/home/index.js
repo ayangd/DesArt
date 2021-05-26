@@ -1,5 +1,5 @@
-import Header from '../component/header';
-import Slogan from '../component/slogan';
+import Header from '../../component/header';
+import Slogan from './slogan';
 
 function Home() {
     return (
