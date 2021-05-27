@@ -1,4 +1,5 @@
 import { createUseStyles } from "react-jss";
+import Logo from "../DesArt.png";
 
 const useStyles = createUseStyles({
     header: {
@@ -6,39 +7,34 @@ const useStyles = createUseStyles({
         padding: '8px 24px',
         display: 'flex',
     },
+    headerLogo: {
+        width: '64px',
+        marginRight: '12px',
+    },
+    headerTitle: {
+        fontSize: '1.5em',
+    },
+    headerLeft: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        flexShrink: '0',
+    },
     headerMenu:{
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        gap:'50px',
+        '& > li': {
+            listStyle: 'none',
+            borderBottom: '2px solid transparent',
+            transition: '0.5s',
+            '&:hover': {
+                borderBottom: '2px solid black',
+            },
+            marginLeft: '24px',
+        }
     },
-    menuLeft: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginRight: 'auto',
-        '& img':{
-            width: '100px',
-            height: '100px',
-            borderRadius: '50%',
-            backgroundColor: 'black',
-        },
-        '& h3':{
-            marginLeft:'30px',
-        },
-
-    },
-    menuRight:{
-        listStyle: 'none',
-        borderBottom: '2px solid transparent',
-        transition: '0.5s',
-        '&:hover': {
-            borderBottom: '2px solid black',
-        },
-        
-    }
-    
 });
 
 function HeaderAdmin() {
@@ -46,11 +42,15 @@ function HeaderAdmin() {
 
     return (
         <div className={classes.header}>
+            <div className={classes.headerLeft}>
+                <img className={classes.headerLogo} src={Logo} alt="" />
+                <div className={classes.headerTitle}>Admin</div>
+            </div>
             <ul className={classes.headerMenu}>
-                <li className={classes.menuLeft}><img></img><h3>NamaAdmin</h3></li>
-                <li className={classes.menuRight}>Dashboard</li>
-                <li className={classes.menuRight}>Article</li>
-                <li className={classes.menuRight}>Contact</li>
+                <li>Dashboard</li>
+                <li>Article</li>
+                <li>Contact</li>
+                <li>Log Out</li>
             </ul>
         </div>
     );

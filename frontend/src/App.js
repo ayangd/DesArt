@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router';
+import ContactAdmin from './page/contactAdmin';
 import Home from './page/home';
 import Login from './page/login';
 
@@ -16,6 +17,11 @@ function App() {
     <Switch>
       <Route path="/login" component={Login} exact />
       <Route path="/home" component={Home} exact />
+      <Route path="/admin">
+        <Switch>
+          <Route path="/admin/contact" component={ContactAdmin} exact />
+        </Switch>
+      </Route>
     </Switch>
   );
 }

@@ -1,7 +1,7 @@
 import Footer from '../../component/footer';
 import Header from '../../component/header';
 import Article from './article';
-import ContactUs from './contact-us';
+import ContactUs from './contactUs';
 import Slogan from './slogan';
 import Testimony from './testimony';
 

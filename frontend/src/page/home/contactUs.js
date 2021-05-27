@@ -32,7 +32,7 @@ function ContactUs() {
     return (
         <div className={classes.contactUsContainer}>
             <div className={classes.contactUsTitle}>Contact Us</div>
-            <form className={classes.contactUsForm}>
+            <div className={classes.contactUsForm}>
                 <div>
                     <label>Name</label>
                     <TextInput type="text" fullWidth />
@@ -45,7 +45,7 @@ function ContactUs() {
                     <label>Message</label>
                     <TextAreaInput fullWidth />
                 </div>
-            </form>
+            </div>
         </div>
     );
 }
