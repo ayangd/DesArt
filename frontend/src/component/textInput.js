@@ -7,6 +7,7 @@ const useStyles = createUseStyles({
         display: 'inline-block',
         border: 'none',
         background: '#f1f1f1',
+        boxSizing: 'border-box',
         '& :focus': {
             backgroundColor: '#ddd',
         },

@@ -20,7 +20,7 @@ const useStyles = createUseStyles({
     },
     form: {
         backgroundColor: 'white',
-        padding: '50px',
+        padding: '20px 50px 50px 50px',
         borderRadius: '10px',
         display: 'flex',
         flexDirection: 'column',
@@ -34,6 +34,10 @@ const useStyles = createUseStyles({
             margin: '16px 0',
         },
     },
+    formTitle: {
+        textAlign: 'center',
+        fontSize: '2em',
+    },
     loginBtn: {
         display: "flex",
         justifyContent: "center",
@@ -43,24 +47,11 @@ const useStyles = createUseStyles({
             fontSize: '1.6em',
             borderRadius: '5px',
             color: 'white',
-            width: '60%',
+            width: '10em',
             padding: '5px 0',
             '&:hover': {
                 backgroundColor: '#d17e02',
             },
-        },
-
-    },
-    forgetPassword: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        '& > .forget': {
-            marginBottom: '8px',
-        },
-        '& > .help': {
-            fontSize: '1.2em',
         },
     },
 });
@@ -89,6 +80,9 @@ function Login() {
                 <img src={Logo} alt="DesArt Logo" />
             </div>
             <form className={classes.form} onSubmit={onSubmit}>
+                <div className={classes.formTitle}>
+                    Admin Login
+                </div>
                 <div>
                     <label>Username</label>
                     <TextInput type="text" placeholder="Enter your email" value={username} onChange={onChangeUsername} fullWidth />
@@ -101,11 +95,6 @@ function Login() {
                 
                 <div className={classes.loginBtn}>
                     <input type="submit" value="Login" />
-                </div>
-
-                <div className={classes.forgetPassword}>
-                    <span className="forget">Forget your password?</span>
-                    <span className="help">Get help sign</span>
                 </div>
             </form>
         </div>
