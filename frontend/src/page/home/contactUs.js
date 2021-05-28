@@ -24,6 +24,18 @@ const useStyles = createUseStyles({
             },
         },
     },
+    submitButtonContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+    },
+    submitButton: {
+        border: 'none',
+        backgroundColor: '#804e03',
+        color: 'white',
+        fontSize: '1.3em',
+        borderRadius: '5px',
+        padding: '5px 20px',
+    },
 });
 
 function ContactUs() {
@@ -32,7 +44,7 @@ function ContactUs() {
     return (
         <div className={classes.contactUsContainer}>
             <div className={classes.contactUsTitle}>Contact Us</div>
-            <div className={classes.contactUsForm}>
+            <form className={classes.contactUsForm}>
                 <div>
                     <label>Name</label>
                     <TextInput type="text" fullWidth />
@@ -45,7 +57,10 @@ function ContactUs() {
                     <label>Message</label>
                     <TextAreaInput fullWidth />
                 </div>
-            </div>
+                <div className={classes.submitButtonContainer}>
+                    <input className={classes.submitButton} type="submit" value="Send" />
+                </div>
+            </form>
         </div>
     );
 }

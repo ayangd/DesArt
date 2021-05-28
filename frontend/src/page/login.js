@@ -47,8 +47,7 @@ const useStyles = createUseStyles({
             fontSize: '1.6em',
             borderRadius: '5px',
             color: 'white',
-            width: '10em',
-            padding: '5px 0',
+            padding: '5px 50px',
             '&:hover': {
                 backgroundColor: '#d17e02',
             },
