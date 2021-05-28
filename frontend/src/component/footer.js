@@ -1,11 +1,31 @@
 import { createUseStyles } from "react-jss";
+import FacebookLogo from '../icons/facebook.svg';
+import InstagramLogo from '../icons/instagram.svg';
 
 const useStyles = createUseStyles({
     footerContainer: {
         display: 'flex',
         background: '#a66f30',
-        alignItems: 'center',
+        flexDirection: 'column',
         padding: '30px',
+    },
+    socialMedia: {
+        display: 'flex',
+        flexDirection: 'column',
+        '& > div': {
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: '8px',
+            '& > img': {
+                maxHeight: '1em',
+                maxWidth: '1em',
+                marginRight: '8px',
+            },
+        },
+    },
+    copyright: {
+        textAlign: 'right',
+        color: 'lightgray',
     },
 });
 
@@ -14,8 +34,12 @@ function Footer() {
 
     return (
         <div className={classes.footerContainer}>
-            <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div className={classes.socialMedia}>
+                <div><img src={FacebookLogo} alt="facebook" />DesArt</div>
+                <div><img src={InstagramLogo} alt="instagram" />@DesArt</div>
+            </div>
+            <div className={classes.copyright}>
+                © 2021 DesArt
             </div>
         </div>
     );
