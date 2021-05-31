@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "database",
+            "database": "${workspaceFolder:DesArt}/database/database.sqlite"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
