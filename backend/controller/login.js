@@ -30,7 +30,7 @@ function createLoginController() {
                 });
             }
             console.log("Session destroyed.");
-            return res.send({ success: true, });
+            return res.send({ success: true });
         });
     }
 

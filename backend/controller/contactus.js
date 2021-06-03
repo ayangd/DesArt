@@ -15,8 +15,11 @@ function createContactUsController(contactus) {
         }
 
         contactus.create({name, email, message})
-            .then(() => {
-                res.send({ success: true });
+            .then(contactus => {
+                res.send({
+                    success: true,
+                    data: contactus,
+                });
             })
             .catch(err => {
                 res.status(500).send({
