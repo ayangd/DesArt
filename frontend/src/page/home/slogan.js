@@ -21,8 +21,8 @@ function Slogan() {
 
     return (
         <div className={classes.sloganContainer}>
-            <div className={classes.sloganTitle}>Slogan</div>
-            <div>Subslogan</div>
+            <div className={classes.sloganTitle}>Life is an art</div>
+            <div>About Us</div>
         </div>
     );
 }
