@@ -2,6 +2,8 @@ import Logo from "../DesArt.png";
 import { useState } from "react";
 import { createUseStyles } from "react-jss";
 import TextInput from "../component/textInput";
+import { useHistory } from "react-router";
+import LoginService from "../service/login";
 
 const useStyles = createUseStyles({
     logo: {
@@ -56,9 +58,11 @@ const useStyles = createUseStyles({
 });
 
 function Login() {
+    const classes = useStyles();
+    const history = useHistory();
+    const loginService = LoginService.getInstance();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const classes = useStyles();
 
     function onChangeUsername(e) {
         setUsername(e.target.value);
@@ -70,7 +74,13 @@ function Login() {
 
     function onSubmit(e) {
         e.preventDefault();
-        return false;
+        (async function() {
+            await loginService.login(username, password);
+            history.push('/home');
+        })()
+        .catch(err => {
+            alert(err.message ?? 'Login failed.');
+        });
     }
 
     return (

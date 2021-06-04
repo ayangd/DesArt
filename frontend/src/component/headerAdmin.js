@@ -1,5 +1,7 @@
 import { createUseStyles } from "react-jss";
+import { useHistory } from "react-router";
 import Logo from "../DesArt.png";
+import LoginService from "../service/login";
 
 const useStyles = createUseStyles({
     header: {
@@ -33,12 +35,22 @@ const useStyles = createUseStyles({
                 borderBottom: '2px solid black',
             },
             marginLeft: '24px',
+            cursor: 'pointer',
         }
     },
 });
 
 function HeaderAdmin() {
     const classes = useStyles();
+    const history = useHistory();
+    const loginService = LoginService.getInstance();
+
+    function logout() {
+        (async function() {
+            await loginService.logout();
+            history.go(0);
+        })();
+    }
 
     return (
         <div className={classes.header}>
@@ -47,10 +59,9 @@ function HeaderAdmin() {
                 <div className={classes.headerTitle}>Admin</div>
             </div>
             <ul className={classes.headerMenu}>
-                <li>Dashboard</li>
                 <li>Article</li>
-                <li>Contact</li>
-                <li>Log Out</li>
+                <li>Contact Us</li>
+                <li onClick={logout}>Log Out</li>
             </ul>
         </div>
     );

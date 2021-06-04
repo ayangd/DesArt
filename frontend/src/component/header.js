@@ -24,6 +24,7 @@ const useStyles = createUseStyles({
             marginLeft: '16px',
             borderBottom: '2px solid transparent',
             transition: '0.5s',
+            cursor: 'pointer',
             '&:hover': {
                 borderBottom: '2px solid black',
             },
@@ -41,9 +42,7 @@ function Header() {
             </div>
             <ul className={classes.headerMenu}>
                 <li>About Us</li>
-                <li>Portfolio</li>
                 <li>Article</li>
-                <li>Contact</li>
             </ul>
         </div>
     );
