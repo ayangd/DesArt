@@ -1,6 +1,9 @@
 import axios from "axios";
 
 class ContactUsService {
+    /**
+     * @type {ContactUsService}
+     */
     static instance;
     static getInstance() {
         if (ContactUsService.instance === undefined) {

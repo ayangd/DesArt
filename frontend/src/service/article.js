@@ -1,6 +1,9 @@
 import axios from "axios";
 
 class ArticleService {
+    /**
+     * @type {ArticleService}
+     */
     static instance;
     static getInstance() {
         if (ArticleService.instance === undefined) {

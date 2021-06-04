@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 class LoginService {
+    /**
+     * @type {LoginService}
+     */
     static instance;
     static getInstance() {
         if (LoginService.instance === undefined) {
