@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { createUseStyles } from "react-jss";
+import { useParams } from "react-router";
 import HeaderAdmin from "../component/headerAdmin"
+import ContactUsService from "../service/contactus";
 
 const useStyles = createUseStyles ({
     contactContainer:{
@@ -30,6 +33,24 @@ const useStyles = createUseStyles ({
 
 function ContactAdmin() {
     const classes = useStyles();
+    const { id } = useParams();
+    const contactUsService = ContactUsService.getInstance();
+    const [contactUs, setContactUs] = useState(null);
+
+    useEffect(() => {
+        let mounted = true;
+
+        (async function() {
+            const responseData = await contactUsService.get(id);
+            if (mounted) {
+                setContactUs(responseData);
+            }
+        })();
+
+        return () => {
+            mounted = false;
+        };
+    });
 
     return(
         <div>
@@ -41,15 +62,15 @@ function ContactAdmin() {
                 <div className={classes.content}>
                     <div>
                         <span className="contentTitle">Name:</span>
-                        <span className="contentContent">Toni</span>
+                        <span className="contentContent">{contactUs?.name}</span>
                     </div>
                     <div>
                         <span className="contentTitle">Email:</span>
-                        <span className="contentContent">Toni@gmail.com</span>
+                        <span className="contentContent">{contactUs?.email}</span>
                     </div>
                     <div>
                         <span className="contentTitle">Message:</span>
-                        <span className="contentContent">Lorem ipsum</span>
+                        <span className="contentContent">{contactUs?.message}</span>
                     </div>
                 </div>
             </div>

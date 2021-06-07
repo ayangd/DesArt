@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router';
 import ContactAdmin from './page/contactAdmin';
+import ContactUsList from './page/contactUsList';
 import Home from './page/home';
 import Login from './page/login';
 
@@ -19,7 +20,8 @@ function App() {
       <Route path="/home" component={Home} exact />
       <Route path="/admin">
         <Switch>
-          <Route path="/admin/contact" component={ContactAdmin} exact />
+          <Route path="/admin/contactus" component={ContactUsList} exact />
+          <Route path="/admin/contactus/:id" component={ContactAdmin} exact />
         </Switch>
       </Route>
     </Switch>

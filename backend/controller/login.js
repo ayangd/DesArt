@@ -11,7 +11,7 @@ function createLoginController() {
             });
         }
 
-        if (username === 'admin13579' && password === 'admin123') {
+        if (username === '@dmin13579' && password === 'Adm|n12345') {
             req.session.user = 'admin';
             return res.send({ success: true });
         }

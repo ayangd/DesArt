@@ -48,7 +48,7 @@ function HeaderAdmin() {
     function logout() {
         (async function() {
             await loginService.logout();
-            history.go(0);
+            history.push('/home');
         })();
     }
 
@@ -60,7 +60,7 @@ function HeaderAdmin() {
             </div>
             <ul className={classes.headerMenu}>
                 <li>Article</li>
-                <li>Contact Us</li>
+                <li onClick={() => history.push('/admin/contactus')}>Contact Us</li>
                 <li onClick={logout}>Log Out</li>
             </ul>
         </div>
