@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { createUseStyles } from "react-jss";
 import { useHistory } from "react-router";
-import HeaderAdmin from "../component/headerAdmin";
 import ContactUsService from "../service/contactus";
 
 const useStyles = createUseStyles({
@@ -52,7 +51,6 @@ function ContactUsList() {
 
     return (
         <Fragment>
-            <HeaderAdmin />
             <div className={classes.listContainer}>
                 <div>
                     <div className={classes.listTitle}>Contact Us</div>

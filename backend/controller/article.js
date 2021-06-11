@@ -13,8 +13,11 @@ function createArticleController(article) {
         }
     
         article.create({title, author, content})
-            .then(() => {
-                res.send({ success: true });
+            .then(article => {
+                res.send({
+                    success: true,
+                    data: article,
+                });
             })
             .catch(err => {
                 res.status(500).send({

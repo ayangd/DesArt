@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../DesArt.png";
 
 const useStyles = createUseStyles({
@@ -34,6 +34,7 @@ const useStyles = createUseStyles({
 
 function Header() {
     const classes = useStyles();
+    const history = useHistory();
 
     return (
         <div className={classes.header}>
@@ -41,8 +42,7 @@ function Header() {
                 <Link to="/home"><img className={classes.headerLogo} src={Logo} alt="Logo" /></Link>
             </div>
             <ul className={classes.headerMenu}>
-                <li>About Us</li>
-                <li>Article</li>
+                <li onClick={() => history.push('/articles')}>Article</li>
             </ul>
         </div>
     );

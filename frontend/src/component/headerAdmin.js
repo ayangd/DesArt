@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import Logo from "../DesArt.png";
 import LoginService from "../service/login";
 
@@ -55,11 +56,11 @@ function HeaderAdmin() {
     return (
         <div className={classes.header}>
             <div className={classes.headerLeft}>
-                <img className={classes.headerLogo} src={Logo} alt="" />
+                <Link to="/home"><img className={classes.headerLogo} src={Logo} alt="Logo" /></Link>
                 <div className={classes.headerTitle}>Admin</div>
             </div>
             <ul className={classes.headerMenu}>
-                <li>Article</li>
+                <li onClick={() => history.push('/articles')}>Article</li>
                 <li onClick={() => history.push('/admin/contactus')}>Contact Us</li>
                 <li onClick={logout}>Log Out</li>
             </ul>

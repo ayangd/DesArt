@@ -77,6 +77,7 @@ function Login() {
         (async function() {
             await loginService.login(username, password);
             history.push('/home');
+            window.location.reload();
         })()
         .catch(err => {
             alert(err.message ?? 'Login failed.');
